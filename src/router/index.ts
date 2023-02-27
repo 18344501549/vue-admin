@@ -1,14 +1,12 @@
 import { App } from 'vue';
 import { createRouter, createWebHistory } from "vue-router";
+import LayoutRoutes from './autoliv';
+import routes from './module/routes';
+
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [
-        {
-            path: '/',
-            component: () => import("../views/home.vue")
-        }
-    ]
+    routes: [...routes, ...LayoutRoutes]
 });
 
 export function setupRouter(app: App) {

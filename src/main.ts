@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 // import './style.css';
-import router, { setupRouter } from './router/index';
+import router, { setupRouter } from '@/router/index';
 import App from './App.vue';
 
 async function bootstrap() {

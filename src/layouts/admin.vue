@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-
 </script>
 
 <template>
-    主页- home.vue
+    <h2>admin.vue</h2>
+    <RouterView></RouterView>
 </template>
 
 <style scoped lang='scss'></style>
