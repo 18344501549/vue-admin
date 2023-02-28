@@ -1,31 +1,20 @@
-// import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import { ConfigEnv, loadEnv } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import alias from './vite/alias';
 import paseEnv from './vite/utils';
+import setupPlugins from './vite/plugin/index';
+
 
 // https://vitejs.dev/config/
-// export default defineConfig({
-//   plugins: [vue()],
-//   resolve: {
-//     alias: { "@": path.resolve(__dirname, 'src') }
-//   }
-// })
-
-
-
-
-export default ({ command, mode }: ConfigEnv) => {
-  const isBuild = command = 'build';
-  const root = process.cwd();
-  const env = loadEnv(mode, root);
-  paseEnv(env);
-
+export default defineConfig(({ command, mode, ssrBuild }) => {
+  const build = command === "serve" ? true : false
+  const env = paseEnv(loadEnv(mode, process.cwd()));
   return {
-    plugins: [vue()],
+    // dev 独有配置
+    plugins: setupPlugins(build, env),
     resolve: {
       alias
     }
-  }
-}
+  };
+});
+
 
