@@ -6,8 +6,9 @@ import setupPlugins from './vite/plugin/index';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode, ssrBuild }) => {
-  const build = command === "serve" ? true : false
+  const build = command === "serve" ? true : false;
   const env = paseEnv(loadEnv(mode, process.cwd()));
+
   return {
     // dev 独有配置
     plugins: setupPlugins(build, env),

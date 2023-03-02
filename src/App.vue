@@ -1,5 +1,6 @@
 <script setup lang="ts">
-console.log(import.meta.env);
+const response = await fetch('http://localhost:5173/api/get').then(res => res.json());
+console.log(response, 'await');
 
 </script>
 

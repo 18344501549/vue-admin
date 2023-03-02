@@ -5,7 +5,9 @@ export default [
         method: 'get',
         response: () => {
             return {
-                code: 0,
+                code: 200,
+                message: '请求成功',
+                type: 'success',
                 data: {
                     name: '不再犹豫',
                 },
