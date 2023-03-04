@@ -1,0 +1,3 @@
+.hd-input {
+  @apply border w-full rounded-sm py-1 px-2 border-gray-200 placeholder: text-xs focus:outline-none focus:ring ring-violet-600 duration-300 mt-5;
+}

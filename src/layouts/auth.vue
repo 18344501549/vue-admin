@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    email
+    <RouterView></RouterView>
 </template>
 
 <style scoped lang='scss'></style>
