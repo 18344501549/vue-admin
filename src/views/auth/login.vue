@@ -1,7 +1,10 @@
 <script setup lang='ts'>
-import hdInput from '@/components/from/hd-input.vue';
-import hdButton from '@/components/from/hd-button.vue';
-import hdLink from '@/components/from/hd-link.vue';
+import { reactive } from 'vue';
+
+const from = reactive({
+    account: 'aa',
+    password: 'aax'
+});
 </script>
 
 <template>
@@ -11,15 +14,15 @@ import hdLink from '@/components/from/hd-link.vue';
             <div class=" p-6">
                 <h2 class=" text-center text-zinc-700 text-lg mt-3">会员登陆</h2>
                 <div class=" mt-8">
-                    <hdInput />
-                    <hdInput class="mt-3" />
+                    <hdInput placeholder="请输入手机号或邮箱" v-model="from.account" />
+                    <hdInput v-model="from.password" placeholder="请输入登陆密码" class="mt-3" />
                 </div>
                 <hdButton />
                 <div class=" flex gap-2 justify-between mt-4">
-                    <hdLink />
-                    <hdLink />
-                    <hdLink />
-                    <hdLink />
+                    <!-- <hdLink /> -->
+                    <a href="" class=" text-xs text-gray-700 hover:text-violet-700">网站首页</a>
+                    <a href="" class=" text-xs text-gray-700 hover:text-violet-700">找回密码</a>
+                    <a href="" class=" text-xs text-gray-700 hover:text-violet-700">网站首页</a>
                 </div>
             </div>
             <div class=" hidden md:block">

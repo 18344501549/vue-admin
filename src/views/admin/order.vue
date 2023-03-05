@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <RouterView />
+    order
 </template>
 
 <style scoped lang='scss'></style>

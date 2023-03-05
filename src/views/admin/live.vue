@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <RouterView />
+    live
 </template>
 
 <style scoped lang='scss'></style>

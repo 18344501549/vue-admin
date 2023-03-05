@@ -1,15 +1,11 @@
 import { RouteRecordRaw } from 'vue-router';
-// {
-//     path:
-//     component: { },
-//     children: [
-
-//     ]
-// }
+import { env } from '@/types/helper';
 
 
 // 获取layouts文件下面的所有文件,进行自动注册路由
+// 父级路由
 const layouts = import.meta.glob('../layouts/*.vue');
+// 子级路由
 const views = import.meta.glob('../views/**/*.vue');
 
 
@@ -51,6 +47,6 @@ function getRouteByModule(file: string, module: { [key: string]: any }) {
     return route;
 };
 
+const routes = env.VITE_ROUTE_AUTOLOAD ? getRoutes() : [] as RouteRecordRaw[]
 
-
-export default getRoutes();
+export default routes;
